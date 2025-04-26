@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produk_skincares",
+  "info": {
+    "singularName": "produk-skincare",
+    "pluralName": "produk-skincares",
+    "displayName": "ProdukSkincare",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nama_produk": {
+      "type": "string"
+    },
+    "harga": {
+      "type": "decimal"
+    },
+    "gambar": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "deskripsi": {
+      "type": "blocks"
+    },
+    "ahli_kulit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ahli-kulit.ahli-kulit",
+      "inversedBy": "produk_skincares"
+    }
+  }
+}

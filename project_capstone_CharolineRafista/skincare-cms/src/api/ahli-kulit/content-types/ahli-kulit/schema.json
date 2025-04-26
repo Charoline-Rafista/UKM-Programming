@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ahli_kulits",
+  "info": {
+    "singularName": "ahli-kulit",
+    "pluralName": "ahli-kulits",
+    "displayName": "AhliKulit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "produk_skincares": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produk-skincare.produk-skincare",
+      "mappedBy": "ahli_kulit"
+    }
+  }
+}
